@@ -29,5 +29,24 @@ public class VehicleMovement : MonoBehaviour
 
         // Brake
         float brake = Input.GetAxis("Jump") != 0 ? brakeForce * rb.mass : 0;
+        wheel_frontRight.brakeTorque = brake;
+        wheel_frontLeft .brakeTorque = brake;
+        wheel_rearRight .brakeTorque = brake;
+        wheel_rearLeft  .brakeTorque = brake;
+
+        RotateWheel(wheel_frontRight);
+        RotateWheel(wheel_frontLeft );
+        RotateWheel(wheel_rearRight );
+        RotateWheel(wheel_rearLeft  );
+    }
+
+    void RotateWheel(WheelCollider w)
+    {
+        Vector3 newPos;
+        Quaternion newRot;
+        w.GetWorldPose(out newPos, out newRot);
+
+        w.transform.rotation = newRot;
+        w.transform.Rotate(0, 0, 90);
     }
 }

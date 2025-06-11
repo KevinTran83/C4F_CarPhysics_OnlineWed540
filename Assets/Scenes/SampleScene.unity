@@ -612,14 +612,61 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.10487558, y: 0, z: 0, w: 0.9944854}
-  m_LocalPosition: {x: 0, y: 1.364, z: -2.395}
+  m_LocalRotation: {x: 0.10487558, y: -0, z: -0, w: 0.9944854}
+  m_LocalPosition: {x: 0, y: 1.67, z: -3.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1288293405}
-  m_RootOrder: 5
+  m_Father: {fileID: 1067913112}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 12.04, y: 0, z: 0}
+--- !u!1 &1067913110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1067913112}
+  - component: {fileID: 1067913111}
+  m_Layer: 0
+  m_Name: Boom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1067913111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067913110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36510a799654abc4a84dd4eeb7503dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1288293405}
+  t: 0.01
+--- !u!4 &1067913112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067913110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.748, z: -2.395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 963194228}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1288293404
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,9 +702,8 @@ Transform:
   - {fileID: 1474337045}
   - {fileID: 1842320937}
   - {fileID: 374815974}
-  - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1288293406
 Rigidbody:
@@ -689,7 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 10
   turnAngle: 30
-  brakeForce: 0
+  brakeForce: 10
   wheel_frontRight: {fileID: 1439373018}
   wheel_rearRight: {fileID: 1474337046}
   wheel_frontLeft: {fileID: 1842320938}

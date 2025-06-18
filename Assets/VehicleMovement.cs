@@ -7,6 +7,8 @@ public class VehicleMovement : MonoBehaviour
     public float acceleration, turnAngle, brakeForce;
     public WheelCollider wheel_frontRight, wheel_rearRight,
                          wheel_frontLeft,  wheel_rearLeft;
+    public Transform     wheel_frontRight_mesh, wheel_rearRight_mesh,
+                         wheel_frontLeft_mesh, wheel_rearLeft_mesh;
 
     private Rigidbody rb;
 
@@ -34,19 +36,19 @@ public class VehicleMovement : MonoBehaviour
         wheel_rearRight .brakeTorque = brake;
         wheel_rearLeft  .brakeTorque = brake;
 
-        RotateWheel(wheel_frontRight);
-        RotateWheel(wheel_frontLeft );
-        RotateWheel(wheel_rearRight );
-        RotateWheel(wheel_rearLeft  );
+        RotateWheel(wheel_frontRight, wheel_frontRight_mesh);
+        RotateWheel(wheel_frontLeft , wheel_frontLeft_mesh );
+        RotateWheel(wheel_rearRight , wheel_rearRight_mesh );
+        RotateWheel(wheel_rearLeft  , wheel_rearLeft_mesh  );
     }
 
-    void RotateWheel(WheelCollider w)
+    void RotateWheel(WheelCollider w, Transform m)
     {
         Vector3 newPos;
         Quaternion newRot;
         w.GetWorldPose(out newPos, out newRot);
 
-        w.transform.rotation = newRot;
-        w.transform.Rotate(0, 0, 90);
+        m.rotation = newRot;
+        //m.transform.Rotate(0, 0, 90);
     }
 }

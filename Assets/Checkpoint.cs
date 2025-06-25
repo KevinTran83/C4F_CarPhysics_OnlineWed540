@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    void OnTriggerEnter(Collider other)
+    { 
+        GetComponentInParent<CheckpointManager>().NextCheckpoint();
+    }
 }
